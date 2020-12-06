@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+        my_sql:
+            image:
+            restart:"no"
+            environment:
+                MYSQL_ROOT_PASSWORD: password
+                ports:
+                    - "3306:3306"
+                
+        mongo:
+            image:'mongo'
+            restart:"no"
+            ports:
+                  - "27017-27019:27017-27019"
+            
+        rabbit:
+            image:
+            restart:always
+            ports:
+                  - "5672:5672"
+                  
+        bot:
+            image:bot
+            restart:always
+            ports:
+                  - "5000:5000"
+                  
+        api:
+            image:api
+            restart:always
+            ports:
+                  - "5672:5672"
+                  - "27017-27019:27017-27019"
+                  
+        subscribe:
+            image:subscribe
+            restart:always
+            ports:
+                  - "5672:5672"
+                  - "3306:3306"
