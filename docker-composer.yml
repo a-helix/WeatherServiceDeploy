@@ -6,19 +6,19 @@ services:
             restart:"no"
             environment:
                 MYSQL_ROOT_PASSWORD: password
-                ports:
+                expose:
                     - "3306:3306"
                 
         mongo:
             image:'mongo'
             restart:"no"
-            ports:
+            expose:
                   - "27017-27019:27017-27019"
             
         rabbit:
             image:
             restart:always
-            ports:
+            expose:
                   - "5672:5672"
                   
         bot:
@@ -30,13 +30,7 @@ services:
         api:
             image:api
             restart:always
-            ports:
-                  - "5672:5672"
-                  - "27017-27019:27017-27019"
                   
         subscribe:
             image:subscribe
             restart:always
-            ports:
-                  - "5672:5672"
-                  - "3306:3306"
