@@ -2,7 +2,7 @@
 if [[ -d /src/ ]]
 then
     echo "Deleting old binaries..."
-	rm -r WeatherApiTelegramBot
+	sudo rm -r WeatherApiTelegramBot
 	echo "Done"
 fi
 mkdir src
@@ -18,7 +18,7 @@ do
 	if [[ -d ~/${i}/ ]]
 	then
 		echo "Deleting "${i}"..."
-		rm -r i
+		sudo rm -r ${i}
 		echo "Done."
 	fi
 	echo "Cloning "${i}"..."
@@ -28,7 +28,7 @@ do
 	bash build.sh
 	echo "Copying "${i}" binaries..."
 	cd ..
-	cp ~/${i}/src/ ~/src/${i}_src/
+	cp /${i}/src/ /src/${i}_src/
 	echo "Done."
 	sudo rm -r ${i}
 done
