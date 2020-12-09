@@ -15,7 +15,7 @@ sources=(
 
 for i in ${sources[@]}; 
 do 
-	if [[ -d /${i}/ ]]
+	if [[ -d ~/${i}/ ]]
 	then
 		echo "Deleting "${i}"..."
 		rm -r i
@@ -28,7 +28,7 @@ do
 	bash build.sh
 	echo "Copying "${i}" binaries..."
 	cd ..
-	cp /${i}/src/ /src/${i}_src/
+	cp ~/${i}/src/ ~/src/${i}_src/
 	echo "Done."
 	sudo rm -r ${i}
 done
