@@ -1,11 +1,11 @@
 #!/bin/bash
+cd /
 if [[ -d /src/ ]]
 then
     echo "Deleting old binaries..."
 	sudo rm -r WeatherApiTelegramBot
 	echo "Done"
 fi
-cd /
 mkdir src
 cd -
 
@@ -43,4 +43,3 @@ do
 done
 
 docker-compose -up
-
