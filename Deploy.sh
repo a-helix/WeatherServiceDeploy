@@ -33,8 +33,7 @@ do
 	cd /src
 	sudo mkdir ${i}_src
 	cd -
-	cd ${i}
-	sudo cp -R src /src/${i}/
+	sudo mv src /src/${i}/
 	echo "Done."
 	cd ..
 	echo "Deleting leftovers."
