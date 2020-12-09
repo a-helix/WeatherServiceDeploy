@@ -34,7 +34,7 @@ do
 	sudo mkdir ${i}_src
 	cd -
 	cd ${i}
-	cp src /src/${i}_src
+	cp -R src /src/${i}_src
 	echo "Done."
 	cd ..
 	echo "Deleting leftovers."
