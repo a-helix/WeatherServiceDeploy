@@ -24,7 +24,7 @@ do
 	echo "Cloning "${i}"..."
 	git clone --recursive git@github.com:a-helix/${i}.git
 	echo "Done."
-	cd WeatherSubscribeService
+	cd ${i}
 	bash build.sh
 	echo "Copying "${i}" binaries..."
 	cd ..
