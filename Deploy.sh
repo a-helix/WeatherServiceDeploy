@@ -31,7 +31,7 @@ do
 	echo "Copying "${i}" binaries..."
 	cd ..
 	cd /src
-	mkdir ${i}_src
+	sudo mkdir ${i}_src
 	cd -
 	cd ${i}
 	cp src /src/${i}_src
