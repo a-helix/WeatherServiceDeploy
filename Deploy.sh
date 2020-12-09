@@ -25,6 +25,7 @@ do
 	fi
 	echo "Cloning "${i}"..."
 	git clone --recursive git@github.com:a-helix/${i}.git
+	git submodule update --init
 	echo "Done."
 	cd ${i}/Deploy
 	bash build.sh
