@@ -6,7 +6,7 @@ then
 	sudo rm -r WeatherApiTelegramBot
 	echo "Done"
 fi
-mkdir src
+sudo mkdir src
 cd -
 
 sources=(
