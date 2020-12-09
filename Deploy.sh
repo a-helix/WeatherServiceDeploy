@@ -5,7 +5,9 @@ then
 	sudo rm -r WeatherApiTelegramBot
 	echo "Done"
 fi
+cd /
 mkdir src
+cd -
 
 sources=(
 	WeatherSubscribeService
@@ -28,9 +30,16 @@ do
 	bash build.sh
 	echo "Copying "${i}" binaries..."
 	cd ..
-	cp /${i}/src/ /src/${i}_src/
+	cd /src
+	mkdir ${i}_src
+	cd -
+	cd ${i}
+	cp src /src/${i}_src
 	echo "Done."
+	cd ..
+	echo "Deleting leftovers."
 	sudo rm -r ${i}
+	echo "Done."
 done
 
 docker-compose -up
