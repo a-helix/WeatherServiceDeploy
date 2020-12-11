@@ -29,16 +29,15 @@ do
         echo "Done."
         cd ${i}/Deploy
         bash build.sh
-        echo "Copying "${i}" binaries..."
+		echo "Copying "${i}" binaries..."
         cd ~/src
         sudo mkdir ${i}_src
         cd -
-        sudo mv src ~/src/${i}/
-        echo "Done."
         cd ..
+		sudo mv src ~/src/${i}_src/
+        echo "Done."
+		cd ..
         echo "Deleting leftovers."
         sudo rm -r ${i}
         echo "Done."
 done
-
-docker-compose -up
